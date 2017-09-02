@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{483C7B54-236F-4ED2-8A72-78BFFE8ACC9D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InstitutoDeIdiomas</RootNamespace>
+    <AssemblyName>InstitutoDeIdiomas</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DataSetsIdiomas\DataSetActa.cs">
+      <DependentUpon>DataSetActa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\DataSetActa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetActa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\DataSetListaAlumnos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetListaAlumnos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\DataSetRelacionAlumno.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelacionAlumno.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\dsImagenesAlumnado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsImagenesAlumnado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetsIdiomas\dsListaDePagos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsListaDePagos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmActualizarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarAlumnosToGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarAlumnosToGroup.Designer.cs">
+      <DependentUpon>frmAsignarAlumnosToGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarAlumno.Designer.cs">
+      <DependentUpon>frmConsultarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarDeudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarPago.Designer.cs">
+      <DependentUpon>frmConsultarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearGrupo.Designer.cs">
+      <DependentUpon>frmCrearGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCrearPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearPago.Designer.cs">
+      <DependentUpon>frmCrearPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGenerarFichaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenuDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenuDocentes.Designer.cs">
+      <DependentUpon>frmMainMenuDocentes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPagarMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPagarMatricula.Designer.cs">
+      <DependentUpon>frmPagarMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrar.Designer.cs">
+      <DependentUpon>frmRegistrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarAlumnos.Designer.cs">
+      <DependentUpon>frmRegistrarAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarPago.Designer.cs">
+      <DependentUpon>frmRegistrarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroAuxiliar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistroAuxiliar.Designer.cs">
+      <DependentUpon>frmRegistroAuxiliar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarGrupo.Designer.cs">
+      <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerGrupoAgregarAlumno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerGrupoAgregarAlumno.Designer.cs">
+      <DependentUpon>frmVerGrupoAgregarAlumno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerNotas.Designer.cs">
+      <DependentUpon>frmVerNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Foto.cs" />
+    <Compile Include="MsSqlConnection.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportForms\frmRptActaFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptActaFinal.Designer.cs">
+      <DependentUpon>frmRptActaFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\frmRptFichaMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptFichaMatricula.Designer.cs">
+      <DependentUpon>frmRptFichaMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\frmRptListaDePagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptListaDePagos.Designer.cs">
+      <DependentUpon>frmRptListaDePagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForms\frmRptReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptReporte.Designer.cs">
+      <DependentUpon>frmRptReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="frmActualizarAlumno.resx">
+      <DependentUpon>frmActualizarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarAlumnosToGroup.resx">
+      <DependentUpon>frmAsignarAlumnosToGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarAlumno.resx">
+      <DependentUpon>frmConsultarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarDeudores.resx">
+      <DependentUpon>frmConsultarDeudores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarPago.resx">
+      <DependentUpon>frmConsultarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearGrupo.resx">
+      <DependentUpon>frmCrearGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearPago.resx">
+      <DependentUpon>frmCrearPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGenerarFichaMatricula.resx">
+      <DependentUpon>frmGenerarFichaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenuDocentes.resx">
+      <DependentUpon>frmMainMenuDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPagarMatricula.resx">
+      <DependentUpon>frmPagarMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrar.resx">
+      <DependentUpon>frmRegistrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarAlumnos.resx">
+      <DependentUpon>frmRegistrarAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarPago.resx">
+      <DependentUpon>frmRegistrarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistroAuxiliar.resx">
+      <DependentUpon>frmRegistroAuxiliar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarGrupo.resx">
+      <DependentUpon>frmSeleccionarGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerGrupoAgregarAlumno.resx">
+      <DependentUpon>frmVerGrupoAgregarAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerNotas.resx">
+      <DependentUpon>frmVerNotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reportes\rptActa.rdlc" />
+    <EmbeddedResource Include="Reportes\rptFichaDeMatricula.rdlc" />
+    <EmbeddedResource Include="Reportes\rptListaAlumnos.rdlc" />
+    <EmbeddedResource Include="Reportes\rptListaDePagos.rdlc" />
+    <EmbeddedResource Include="Reportes\rptReporte.rdlc" />
+    <EmbeddedResource Include="ReportForms\frmRptActaFinal.resx">
+      <DependentUpon>frmRptActaFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptFichaMatricula.resx">
+      <DependentUpon>frmRptFichaMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptListaDePagos.resx">
+      <DependentUpon>frmRptListaDePagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptReporte.resx">
+      <DependentUpon>frmRptReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSetsIdiomas\DataSetActa.xsc">
+      <DependentUpon>DataSetActa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetActa.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetActa.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetActa.xss">
+      <DependentUpon>DataSetActa.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetListaAlumnos.xsc">
+      <DependentUpon>DataSetListaAlumnos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetListaAlumnos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetListaAlumnos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetListaAlumnos.xss">
+      <DependentUpon>DataSetListaAlumnos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetRelacionAlumno.xsc">
+      <DependentUpon>DataSetRelacionAlumno.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetRelacionAlumno.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelacionAlumno.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\DataSetRelacionAlumno.xss">
+      <DependentUpon>DataSetRelacionAlumno.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsImagenesAlumnado.xsc">
+      <DependentUpon>dsImagenesAlumnado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsImagenesAlumnado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsImagenesAlumnado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\dsImagenesAlumnado.xss">
+      <DependentUpon>dsImagenesAlumnado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsListaDePagos.xsc">
+      <DependentUpon>dsListaDePagos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetsIdiomas\dsListaDePagos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsListaDePagos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetsIdiomas\dsListaDePagos.xss">
+      <DependentUpon>dsListaDePagos.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\InstitutoDeIdiomas.Model.Foto.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
