@@ -61,6 +61,7 @@ namespace InstitutoDeIdiomas
             this.btnRelacionAlumno = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDocente = new System.Windows.Forms.TextBox();
+            this.btnRelacionAlumnos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetRelacionAlumno)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvwNotas)).BeginInit();
@@ -314,7 +315,7 @@ namespace InstitutoDeIdiomas
             // 
             // btnRelacionAlumno
             // 
-            this.btnRelacionAlumno.Location = new System.Drawing.Point(587, 124);
+            this.btnRelacionAlumno.Location = new System.Drawing.Point(587, 135);
             this.btnRelacionAlumno.Name = "btnRelacionAlumno";
             this.btnRelacionAlumno.Size = new System.Drawing.Size(196, 44);
             this.btnRelacionAlumno.TabIndex = 71;
@@ -341,11 +342,22 @@ namespace InstitutoDeIdiomas
             this.txtDocente.Size = new System.Drawing.Size(238, 20);
             this.txtDocente.TabIndex = 73;
             // 
+            // btnRelacionAlumnos
+            // 
+            this.btnRelacionAlumnos.Location = new System.Drawing.Point(587, 85);
+            this.btnRelacionAlumnos.Name = "btnRelacionAlumnos";
+            this.btnRelacionAlumnos.Size = new System.Drawing.Size(196, 44);
+            this.btnRelacionAlumnos.TabIndex = 75;
+            this.btnRelacionAlumnos.Text = "RELACION DE ALUMNOS";
+            this.btnRelacionAlumnos.UseVisualStyleBackColor = true;
+            this.btnRelacionAlumnos.Click += new System.EventHandler(this.btnRelacionAlumnos_Click);
+            // 
             // frmVerNotas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(830, 611);
+            this.Controls.Add(this.btnRelacionAlumnos);
             this.Controls.Add(this.txtDocente);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnRelacionAlumno);
@@ -422,5 +434,6 @@ namespace InstitutoDeIdiomas
         private DataSetRelacionAlumno DataSetRelacionAlumno;
         private System.Windows.Forms.TextBox txtDocente;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnRelacionAlumnos;
     }
 }

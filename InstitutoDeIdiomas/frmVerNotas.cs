@@ -18,6 +18,7 @@ namespace InstitutoDeIdiomas
         public static SqlConnection _SqlConnection = new SqlConnection();
         int codigoGrupo;
         String anho, mes;
+        DataTable dtListaAlumno = new DataTable();
         public frmVerNotas(int id)
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace InstitutoDeIdiomas
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
+            dtListaAlumno = dt.Copy();
             dgvwBase.DataSource = dt;
             if (cmd.Connection.State == ConnectionState.Open)
             {
@@ -684,8 +686,12 @@ namespace InstitutoDeIdiomas
 
                 for (int i = 0; i < dgvwNotas.ColumnCount; i++)
                 {
-                    if (i < dgvwNotas.ColumnCount - 4) rw[i + 1] = row.Cells[i].Value;
-                    else nota = nota + Convert.ToDecimal(row.Cells[i].Value);
+                    if (i < dgvwNotas.ColumnCount - 5) rw[i + 1] = row.Cells[i].Value;
+                    else
+                    {
+                        nota = nota + Convert.ToDecimal(row.Cells[i].Value);
+                        MessageBox.Show(row.Cells[i].Value.ToString());
+                    }
                 }
                 nota = nota / 5;
                 nota = decimal.Round(nota, 0);
@@ -723,6 +729,22 @@ namespace InstitutoDeIdiomas
             }
 
 
+        }
+
+        private void btnRelacionAlumnos_Click(object sender, EventArgs e)
+        {
+            dtListaAlumno.Columns[0].ColumnName = "codigo";
+            dtListaAlumno.Columns[1].ColumnName = "nombre";
+            dtListaAlumno.Columns.Add("numero");
+            for (int i = 0; i < dtListaAlumno.Rows.Count; i++)
+            {
+                dtListaAlumno.Rows[i]["numero"] = i + 1 + "";
+            }
+            using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumno, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
+                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text))
+            {
+                frm.ShowDialog();
+            }
         }
 
         private void frmVerNotas_Load(object sender, EventArgs e)

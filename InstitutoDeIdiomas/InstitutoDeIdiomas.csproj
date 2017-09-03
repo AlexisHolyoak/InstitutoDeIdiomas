@@ -236,6 +236,12 @@
     <Compile Include="ReportForms\frmRptListaDePagos.Designer.cs">
       <DependentUpon>frmRptListaDePagos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForms\frmRptRelacionAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForms\frmRptRelacionAlumnos.Designer.cs">
+      <DependentUpon>frmRptRelacionAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForms\frmRptReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\frmRptListaDePagos.resx">
       <DependentUpon>frmRptListaDePagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForms\frmRptRelacionAlumnos.resx">
+      <DependentUpon>frmRptRelacionAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForms\frmRptReporte.resx">
       <DependentUpon>frmRptReporte.cs</DependentUpon>
