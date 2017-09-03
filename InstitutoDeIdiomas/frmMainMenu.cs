@@ -90,5 +90,10 @@ namespace InstitutoDeIdiomas
         {
             new frmActualizarAlumno().Show();
         }
+
+        private void rECORDACADEMICOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

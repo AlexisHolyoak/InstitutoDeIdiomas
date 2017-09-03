@@ -690,7 +690,6 @@ namespace InstitutoDeIdiomas
                     else
                     {
                         nota = nota + Convert.ToDecimal(row.Cells[i].Value);
-                        MessageBox.Show(row.Cells[i].Value.ToString());
                     }
                 }
                 nota = nota / 5;

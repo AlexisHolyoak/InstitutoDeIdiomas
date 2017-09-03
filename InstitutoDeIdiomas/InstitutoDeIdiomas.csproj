@@ -172,6 +172,12 @@
     <Compile Include="frmPagarMatricula.Designer.cs">
       <DependentUpon>frmPagarMatricula.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecordAcademico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordAcademico.Designer.cs">
+      <DependentUpon>frmRecordAcademico.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRegistrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPagarMatricula.resx">
       <DependentUpon>frmPagarMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordAcademico.resx">
+      <DependentUpon>frmRecordAcademico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrar.resx">
       <DependentUpon>frmRegistrar.cs</DependentUpon>

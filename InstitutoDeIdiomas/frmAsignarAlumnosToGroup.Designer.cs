@@ -270,6 +270,7 @@
             this.dataGridViewAlumnoGrupo.RowTemplate.Height = 24;
             this.dataGridViewAlumnoGrupo.Size = new System.Drawing.Size(396, 407);
             this.dataGridViewAlumnoGrupo.TabIndex = 25;
+            this.dataGridViewAlumnoGrupo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlumnoGrupo_CellContentClick);
             // 
             // label1
             // 

@@ -43,7 +43,7 @@ namespace InstitutoDeIdiomas
                 da.Fill(dt);
                 dtListaAlumnos = dt.Copy();
                 dataGridViewAlumnoGrupo.DataSource = dt;
-                dataGridViewAlumnoGrupo.Columns["NOMBRE"].Width =153;
+                dataGridViewAlumnoGrupo.Columns["NOMBRE"].Width =250;
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
@@ -156,6 +156,8 @@ namespace InstitutoDeIdiomas
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridViewAlumno.DataSource = dt;
+                dataGridViewAlumno.Columns["CODIGO ALUMNO"].Visible = false;
+                dataGridViewAlumno.Columns["NOMBRE"].Width = 260;
 
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
@@ -249,6 +251,11 @@ namespace InstitutoDeIdiomas
             }
         }
 
+        private void dataGridViewAlumnoGrupo_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void txtBuscarApellido_KeyUp(object sender, KeyEventArgs e)
         {
             try
@@ -269,6 +276,8 @@ namespace InstitutoDeIdiomas
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dataGridViewAlumno.DataSource = dt;
+                dataGridViewAlumno.Columns["CODIGO ALUMNO"].Visible = false;
+                dataGridViewAlumno.Columns["NOMBRE"].Width = 260;
                 if (cmd.Connection.State == ConnectionState.Open)
                 {
                     cmd.Connection.Close();
