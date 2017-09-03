@@ -25,7 +25,7 @@ namespace InstitutoDeIdiomas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DESKTOP-J354RAN\\SQLEXPRESS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("LAPTOP-HTJ0B4NC")]
         public string ServerName {
             get {
                 return ((string)(this["ServerName"]));
@@ -49,7 +49,7 @@ namespace InstitutoDeIdiomas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("alex")]
+        [global::System.Configuration.DefaultSettingValueAttribute("gari")]
         public string User {
             get {
                 return ((string)(this["User"]));
@@ -61,7 +61,7 @@ namespace InstitutoDeIdiomas.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("123456789")]
+        [global::System.Configuration.DefaultSettingValueAttribute("gari")]
         public string Password {
             get {
                 return ((string)(this["Password"]));

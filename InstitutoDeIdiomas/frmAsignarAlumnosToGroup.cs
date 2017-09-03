@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InstitutoDeIdiomas.ReportForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace InstitutoDeIdiomas
         public static SqlConnection _SqlConnection = new SqlConnection();
         String codigoGrupo, codigoAlumno;
         int id;
+        DataTable dtListaAlumnos = new DataTable();
         public frmAsignarAlumnosToGroup(int id)
         {
             InitializeComponent();
@@ -39,6 +41,7 @@ namespace InstitutoDeIdiomas
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
+                dtListaAlumnos = dt.Copy();
                 dataGridViewAlumnoGrupo.DataSource = dt;
                 dataGridViewAlumnoGrupo.Columns["NOMBRE"].Width =153;
                 if (cmd.Connection.State == ConnectionState.Open)
@@ -83,7 +86,7 @@ namespace InstitutoDeIdiomas
                 txtSalon.Text = row2[4].ToString();
                 txtHorario.Text = row2[5].ToString();
                 txtHorario2.Text = row2[6].ToString();
-
+                txtDocente.Text = row2[8].ToString();
                 codigoGrupo = row2["idGrupo"].ToString();
 
                 if (cmd.Connection.State == ConnectionState.Open)
@@ -227,6 +230,22 @@ namespace InstitutoDeIdiomas
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRelacionAlumnos_Click(object sender, EventArgs e)
+        {
+            dtListaAlumnos.Columns[0].ColumnName = "codigo";
+            dtListaAlumnos.Columns[1].ColumnName = "nombre";
+            dtListaAlumnos.Columns.Add("numero");
+            for (int i = 0; i < dtListaAlumnos.Rows.Count; i++)
+            {
+                dtListaAlumnos.Rows[i]["numero"] = i + 1 + "";
+            }
+            using (frmRptRelacionAlumnos frm = new frmRptRelacionAlumnos(dtListaAlumnos, txtIdioma.Text, txtNivel.Text, txtCiclo.Text,
+                txtDocente.Text, txtSalon.Text, txtHorario.Text, txtHorario2.Text))
+            {
+                frm.ShowDialog();
             }
         }
 
